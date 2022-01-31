@@ -26,3 +26,17 @@ nav li a:hover {
   font-weight: bold;
   text-decoration: underline;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.footer p {
+  padding-left: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
