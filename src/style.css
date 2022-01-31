@@ -1,3 +1,28 @@
-* {
-  margin: 0;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+nav ul {
+  display: flex;
+  justify-items: center;
+  gap: 50px;
+  list-style-type: none;
+}
+
+nav li a {
+  color: #000;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
 }
