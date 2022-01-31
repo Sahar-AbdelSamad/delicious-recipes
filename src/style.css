@@ -29,6 +29,7 @@ nav li a:hover {
 
 .footer {
   position: fixed;
+  background-color: white;
   bottom: 0;
   right: 0;
   left: 0;
