@@ -29,15 +29,19 @@ nav li a:hover {
 
 .footer {
   position: fixed;
-  background-color: white;
+  background-color: #f4f4f4;
   bottom: 0;
   right: 0;
   left: 0;
 }
 
-.footer p {
+hr {
+  margin: 10px 0 0;
+}
+
+.footer small {
   padding-left: 20px;
-  height: 40px;
+  height: 60px;
   display: flex;
   align-items: center;
 }
