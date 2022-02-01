@@ -71,6 +71,18 @@ i {
   cursor: pointer;
 }
 
+i:hover {
+  font-size: larger;
+}
+
+i:active {
+  color: red;
+}
+
+.small {
+  width: 54px;
+}
+
 .comments {
   cursor: pointer;
   border-radius: 0.2em;

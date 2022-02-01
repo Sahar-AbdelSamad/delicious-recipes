@@ -1,5 +1,44 @@
 import fetchData from './fetchData.js';
-import { getAPI } from './involvementAPI.js';
+import { getAPI, postAPI } from './involvementAPI.js';
+
+export const listLikes = () => {
+  getAPI().then((response) => {
+    const like = Array.from(document.querySelectorAll('.likes'));
+    for (let i = 0; i < like.length; i += 1) {
+      response.forEach((item) => {
+        if (item.item_id === like[i].id) {
+          if (like[i].childNodes.length <= 1) {
+            const small = document.createElement('small');
+            small.className = ('small');
+            small.textContent = `${item.likes} likes`;
+            like[i].appendChild(small);
+          } else {
+            like[i].removeChild(like[i].childNodes[1]);
+            const small = document.createElement('small');
+            small.className = ('small');
+            small.textContent = `${item.likes} likes`;
+            like[i].appendChild(small);
+          }
+        }
+      });
+    }
+  });
+};
+
+const addLike = () => {
+  const heart = Array.from(document.querySelectorAll('.far'));
+  heart.forEach((item) => {
+    item.addEventListener('click', async () => {
+      if (item.style.color !== 'red') {
+        item.classList.remove('far');
+        item.classList.add('fas');
+        item.style.color = 'red';
+        await postAPI(item.id);
+        listLikes();
+      }
+    });
+  });
+};
 
 export const listItems = async () => {
   const ul = document.querySelector('.recipes');
@@ -38,20 +77,5 @@ export const listItems = async () => {
     li.appendChild(btn);
     ul.appendChild(li);
   });
-};
-
-export const listLikes = () => {
-  getAPI().then((response) => {
-    const like = Array.from(document.querySelectorAll('.likes'));
-    for (let i = 0; i < like.length; i += 1) {
-      response.forEach((item) => {
-        if (item.item_id === like[i].id) {
-          const small = document.createElement('small');
-          small.className = ('small');
-          small.textContent = `${item.likes} likes`;
-          like[i].appendChild(small);
-        }
-      });
-    }
-  });
+  addLike();
 };
