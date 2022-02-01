@@ -34,11 +34,11 @@ nav li a:hover {
 .recipes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 3%;
+  column-gap: 2%;
   row-gap: 40px;
   list-style-type: none;
   padding: 0;
-  margin: 40px 8% 90px;
+  margin: 40px 7% 90px;
 }
 
 .recipe-item {

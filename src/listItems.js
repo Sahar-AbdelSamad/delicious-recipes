@@ -1,12 +1,12 @@
 import fetchData from './fetchData.js';
+import { getAPI } from './involvementAPI.js';
 
-const listItems = async () => {
+export const listItems = async () => {
   const ul = document.querySelector('.recipes');
   const food = await fetchData();
   food.forEach((element) => {
     const li = document.createElement('li');
     li.className = ('recipe-item');
-    li.id = element.idMeal;
 
     const img = document.createElement('img');
     img.className = ('food-img');
@@ -19,12 +19,11 @@ const listItems = async () => {
 
     const div = document.createElement('div');
     div.className = ('likes');
+    div.id = element.idMeal;
 
     const heart = document.createElement('i');
     heart.classList.add('far', 'fa-heart');
     heart.id = element.idMeal;
-    const small = document.createElement('small');
-    small.textContent = '5 likes';
 
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -33,7 +32,6 @@ const listItems = async () => {
     btn.id = element.idMeal;
 
     div.appendChild(heart);
-    div.appendChild(small);
     p.appendChild(div);
     li.appendChild(img);
     li.appendChild(p);
@@ -42,4 +40,18 @@ const listItems = async () => {
   });
 };
 
-export default listItems;
+export const listLikes = () => {
+  getAPI().then((response) => {
+    const like = Array.from(document.querySelectorAll('.likes'));
+    for (let i = 0; i < like.length; i += 1) {
+      response.forEach((item) => {
+        if (item.item_id === like[i].id) {
+          const small = document.createElement('small');
+          small.className = ('small');
+          small.textContent = `${item.likes} likes`;
+          like[i].appendChild(small);
+        }
+      });
+    }
+  });
+};
