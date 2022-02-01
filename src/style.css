@@ -1,3 +1,7 @@
+body {
+  background-color: #f4f4f4;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -25,6 +29,57 @@ nav li a:hover {
   color: #000;
   font-weight: bold;
   text-decoration: underline;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3%;
+  row-gap: 40px;
+  list-style-type: none;
+  padding: 0;
+  margin: 40px 8% 90px;
+}
+
+.recipe-item {
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.food-img {
+  width: 100%;
+}
+
+.recipe-name {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-weight: normal;
+}
+
+i {
+  font-size: large;
+  cursor: pointer;
+}
+
+.comments {
+  cursor: pointer;
+  border-radius: 0.2em;
+  box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+  letter-spacing: 0.2px;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  border: none;
 }
 
 .footer {
