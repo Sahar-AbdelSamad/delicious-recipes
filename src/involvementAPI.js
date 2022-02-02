@@ -1,5 +1,8 @@
+const url =
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qKrE7Hh51FLB4aqMQk0N/';
+
 export const postAPI = async (id) => {
-  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qKrE7Hh51FLB4aqMQk0N/likes/', {
+  const response = await fetch(`${url}likes/`, {
     method: 'POST',
     body: JSON.stringify({
       item_id: id,
@@ -12,7 +15,7 @@ export const postAPI = async (id) => {
 };
 
 export const getAPI = async () => {
-  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qKrE7Hh51FLB4aqMQk0N/likes/');
+  const response = await fetch(`${url}likes/`);
   const data = await response.json();
   return data;
 };
