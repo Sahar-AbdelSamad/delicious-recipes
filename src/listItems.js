@@ -1,3 +1,4 @@
+import comments from './comments.js';
 import fetchData from './fetchData.js';
 import { getAPI } from './involvementAPI.js';
 
@@ -6,19 +7,19 @@ export const listItems = async () => {
   const food = await fetchData();
   food.forEach((element) => {
     const li = document.createElement('li');
-    li.className = ('recipe-item');
+    li.className = 'recipe-item';
 
     const img = document.createElement('img');
-    img.className = ('food-img');
+    img.className = 'food-img';
     img.src = element.strMealThumb;
-    img.alt = ('food');
+    img.alt = 'food';
 
     const p = document.createElement('p');
     p.textContent = element.strMeal;
-    p.className = ('recipe-name');
+    p.className = 'recipe-name';
 
     const div = document.createElement('div');
-    div.className = ('likes');
+    div.className = 'likes';
     div.id = element.idMeal;
 
     const heart = document.createElement('i');
@@ -27,9 +28,10 @@ export const listItems = async () => {
 
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = ('comments');
+    btn.className = 'comments';
     btn.innerText = 'Comments';
     btn.id = element.idMeal;
+    comments(btn);
 
     div.appendChild(heart);
     p.appendChild(div);
@@ -47,7 +49,7 @@ export const listLikes = () => {
       response.forEach((item) => {
         if (item.item_id === like[i].id) {
           const small = document.createElement('small');
-          small.className = ('small');
+          small.className = 'small';
           small.textContent = `${item.likes} likes`;
           like[i].appendChild(small);
         }
