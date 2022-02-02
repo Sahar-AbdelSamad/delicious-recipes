@@ -79,6 +79,6 @@ export const listItems = async () => {
   const recipe = document.querySelectorAll('.recipe-item');
   const counter = document.querySelector('.recipes-counter');
   counter.innerText = (`Recipes (${countRecipes(recipe)})`);
-  
+
   addLike();
 };

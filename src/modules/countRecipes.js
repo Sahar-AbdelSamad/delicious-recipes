@@ -1,5 +1,3 @@
-const countRecipes = (recipe) => {
-  return recipe.length;
-};
+const countRecipes = (recipe) => recipe.length;
 
-export default countRecipes
+export default countRecipes;
