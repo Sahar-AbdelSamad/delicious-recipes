@@ -110,9 +110,10 @@ hr {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow-y: initial !important;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 0 0.75rem crimson);
 }
 
 .modal-content {
@@ -120,7 +121,9 @@ hr {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+  height: 90vh;
+  overflow-y: auto;
 }
 
 .close {
@@ -145,15 +148,15 @@ hr {
 }
 
 #modalContent img {
-  width: 50%;
+  width: 80%;
 }
 
 #modalContent table {
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: center;
 }
 
 #modalContent table td {
-  padding-left: 30px;
+  padding-left: 20px;
 }
