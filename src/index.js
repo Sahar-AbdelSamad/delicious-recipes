@@ -1,5 +1,5 @@
-import { listItems, listLikes } from './listItems.js';
-import './style.css';
+import { listItems, listLikes } from './modules/listItems.js';
+import './assets/style.css';
 
 window.onload = () => {
   listItems();
