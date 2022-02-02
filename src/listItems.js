@@ -1,6 +1,7 @@
 import comments from './comments.js';
 import fetchData from './fetchData.js';
 import { getAPI, postAPI } from './involvementAPI.js';
+import countRecipes from './countRecipes.js';
 
 export const listLikes = () => {
   getAPI().then((response) => {
@@ -30,13 +31,8 @@ const addLike = () => {
   const heart = Array.from(document.querySelectorAll('.far'));
   heart.forEach((item) => {
     item.addEventListener('click', async () => {
-      if (item.style.color !== 'red') {
-        item.classList.remove('far');
-        item.classList.add('fas');
-        item.style.color = 'red';
-        await postAPI(item.id);
-        listLikes();
-      }
+      await postAPI(item.id);
+      listLikes();
     });
   });
 };
@@ -80,4 +76,5 @@ export const listItems = async () => {
     ul.appendChild(li);
   });
   addLike();
+  countRecipes();
 };
