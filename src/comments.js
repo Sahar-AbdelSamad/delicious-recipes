@@ -1,4 +1,4 @@
-import fetchSingleData from './fetchSingleData';
+import fetchSingleData from './fetchSingleData.js';
 
 const comments = (btn) => {
   const modal = document.getElementById('commentModal');
@@ -76,7 +76,7 @@ const comments = (btn) => {
   };
 
   window.onclick = (event) => {
-    if (event.target == modal) {
+    if (event.target === modal) {
       modal.style.display = 'none';
     }
   };
