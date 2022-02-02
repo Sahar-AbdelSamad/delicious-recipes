@@ -8,9 +8,14 @@ header {
   justify-content: center;
 }
 
-header img {
+.logo {
   width: 80px;
+  height: 80px;
   border-radius: 50%;
+  text-decoration: none;
+  background-image: url(./logo.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 nav ul {
@@ -69,14 +74,11 @@ nav li a:hover {
 i {
   font-size: large;
   cursor: pointer;
-}
-
-i:hover {
-  font-size: larger;
+  color: red;
 }
 
 i:active {
-  color: red;
+  font-size: larger;
 }
 
 .small {
