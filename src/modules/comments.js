@@ -96,9 +96,6 @@ const comments = (btn) => {
         </form>
     `;
 
-    const createCommentBtn = document.getElementById(`commentBtn${btn.id}`);
-    createCommentBtn.addEventListener('click', (e) => createComment(e, btn.id));
-
     const itemC = document.getElementById('itemC');
     itemC.innerHTML = allComments
       .map((e) => {
@@ -106,6 +103,9 @@ const comments = (btn) => {
         return `<span>${e.creation_date} ${username}: ${comment}</span><br />`;
       })
       .join('<br />');
+
+    const createCommentBtn = document.getElementById(`commentBtn${btn.id}`);
+    createCommentBtn.addEventListener('click', (e) => createComment(e, btn));
   };
 
   span.onclick = () => {
