@@ -1,3 +1,4 @@
+import countComments from './countComments.js';
 import createComment from './createComment.js';
 import fetchSingleData from './fetchSingleData.js';
 import { getCommentsAPI } from './involvementAPI.js';
@@ -72,7 +73,7 @@ const comments = (btn) => {
     <td><strong>Ingredient 14:</strong> ${strIngredient14}</td>
     </tr>
     </table>
-    <h2>Comments (2)</h2>
+    <h2>Comments <span id="countC"></span></h2>
     <div id="itemC"></div>
     <form>
           <h2>Add a Comment</h2>
@@ -95,6 +96,9 @@ const comments = (btn) => {
           </div>
         </form>
     `;
+
+    const countC = document.getElementById('countC');
+    countC.textContent = `(${countComments(allComments)})`;
 
     const itemC = document.getElementById('itemC');
     itemC.innerHTML = allComments
