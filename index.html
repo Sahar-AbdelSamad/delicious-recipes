@@ -10,22 +10,47 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <title>Welcome</title>
+    <title>Group-Capstone-JS</title>
   <script defer src="main.js"></script></head>
   <body>
     <header>
       <a class="logo" href="#"></a>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a class="recipes-counter" href="#"></a></li>
-          <li><a href="#">About</a></li>
+      <i class="fas fa-grip-lines lines"></i>
+      <nav class="navigation">
+        <ul class="nav-desktop">
+          <li><a class="recipes-counter allRecipes" href="#"></a></li>
+          <li><a class="about" href="#">About</a></li>
+        </ul>
+        <ul class="nav-mobile">
+          <li><i class="fas fa-times lines-mobile"></i></li>
+          <li><a class="mobile recipes-counter-mobile" href="#"></a></li>
+          <li><a class="mobile about-mobile" href="#">About</a></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main id="allRecipes">
       <ul class="recipes"></ul>
+      <div id="commentModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="modalContent"></div>
+        </div>
+      </div>
     </main>
+    <section id="about">
+      <h2>About Group Capstone JS</h2>
+      <p>
+        This is a JavaScript capstone project. It is a web application based on
+        external APIs. It retrieves information from two different APIs:
+        <a href="https://www.themealdb.com/api.php">Meals DB</a> and
+        <a
+          href="https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270"
+          >Involvement API</a
+        >.<br />The homepage lists some recipes that we can "like".<br />The
+        comment button opens a popup window showing more information about the
+        recipe and we can use it to write a comment.
+      </p>
+    </section>
     <footer class="footer">
       <hr />
       <small
@@ -33,11 +58,5 @@
         Ufeli</small
       >
     </footer>
-    <div id="commentModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="modalContent">...</div>
-      </div>
-    </div>
   </body>
 </html>
