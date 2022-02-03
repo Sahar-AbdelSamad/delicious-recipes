@@ -1,4 +1,4 @@
-import { postCommentAPI } from './involvementAPI';
+import { postCommentAPI } from './involvementAPI.js';
 
 const createComment = async (e, id) => {
   e.preventDefault();
@@ -23,9 +23,12 @@ const createComment = async (e, id) => {
   };
 
   const postComment = await postCommentAPI(body);
-  postComment === 'Created'
-    ? (message.textContent = 'Your comment was successfull Added')
-    : (message.textContent = 'Something went wrong');
+  if (postComment === 'Created') {
+    message.textContent = 'Your comment was successfull Added';
+  } else {
+    message.textContent = 'Something went wrong';
+  }
+
   name.value = '';
   insight.value = '';
 };
