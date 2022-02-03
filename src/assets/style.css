@@ -319,7 +319,7 @@ form input[type='button']:hover {
     width: 90%;
   }
 
-  .pad-btm input {
+  form input[type='button'] {
     width: 60%;
   }
 }
