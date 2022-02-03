@@ -11,7 +11,7 @@ describe('Count the number of comments added', () => {
       {
         item_id: '52951',
         username: 'James Okon',
-        comment: 'Nice Chicked',
+        comment: 'Nice Chicken',
       },
     ];
     expect(countComments(comments)).toBe(2);
