@@ -174,3 +174,37 @@ hr {
 #modalContent table td {
   padding-left: 20px;
 }
+
+form {
+  text-align: center;
+  width: 100%;
+}
+
+form span {
+  color: #f00;
+  font-style: italic;
+}
+
+form input,
+textarea {
+  width: 50%;
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+form input[type='button'] {
+  width: 30%;
+  border: 2px solid #000;
+  background: #fff;
+  box-shadow: 2px 2px #000;
+  cursor: pointer;
+}
+
+form input[type='button']:hover {
+  background: #333;
+  color: #fff;
+}
+
+.pad-btm {
+  padding-bottom: 15px;
+}

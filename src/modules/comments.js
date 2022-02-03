@@ -1,3 +1,4 @@
+import createComment from './createComment.js';
 import fetchSingleData from './fetchSingleData.js';
 
 const comments = (btn) => {
@@ -68,7 +69,30 @@ const comments = (btn) => {
     <td><strong>Ingredient 14:</strong> ${strIngredient14}</td>
     </tr>
     </table>
+    <form>
+          <h2>Add a Comment</h2>
+          <span id="message"></span>
+          <br />
+          <div class="pad-btm">
+            <input type="text" name="name" id="name" placeholder="Your Name" />
+          </div>
+          <div class="pad-btm">
+            <textarea
+              name="insight"
+              id="insight"
+              placeholder="Your Insight"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="pad-btm">
+            <input type="button" id=commentBtn${btn.id} value="Submit" />
+          </div>
+        </form>
     `;
+
+    const createCommentBtn = document.getElementById(`commentBtn${btn.id}`);
+    createCommentBtn.addEventListener('click', (e) => createComment(e, btn.id));
   };
 
   span.onclick = () => {
