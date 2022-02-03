@@ -1,4 +1,4 @@
-import countRecipes from './countRecipes.js';
+import countRecipes from '../modules/countRecipes.js';
 
 describe('Count the number of recipes on the page', () => {
   test('Return 1 when there is only one meal in the array', () => {
