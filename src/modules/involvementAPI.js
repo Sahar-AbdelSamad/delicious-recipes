@@ -1,5 +1,4 @@
-const url =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qKrE7Hh51FLB4aqMQk0N/';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qKrE7Hh51FLB4aqMQk0N/';
 
 export const postAPI = async (id) => {
   const response = await fetch(`${url}likes`, {

@@ -101,9 +101,9 @@ const comments = (btn) => {
 
     const itemC = document.getElementById('itemC');
     itemC.innerHTML = allComments
-      .map((e, i) => {
-        const { username, creation_date, comment } = allComments[i];
-        return `<span>${creation_date} ${username}: ${comment}</span><br />`;
+      .map((e) => {
+        const { username, comment } = e;
+        return `<span>${e.creation_date} ${username}: ${comment}</span><br />`;
       })
       .join('<br />');
   };
