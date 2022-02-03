@@ -1,5 +1,6 @@
 import createComment from './createComment.js';
 import fetchSingleData from './fetchSingleData.js';
+import { getCommentsAPI } from './involvementAPI.js';
 
 const comments = (btn) => {
   const modal = document.getElementById('commentModal');
@@ -8,6 +9,8 @@ const comments = (btn) => {
 
   btn.onclick = async () => {
     const data = await fetchSingleData(btn.id);
+    const allComments = await getCommentsAPI(btn.id);
+
     const {
       strMealThumb,
       strMeal,
@@ -69,6 +72,8 @@ const comments = (btn) => {
     <td><strong>Ingredient 14:</strong> ${strIngredient14}</td>
     </tr>
     </table>
+    <h2>Comments (2)</h2>
+    <div id="itemC"></div>
     <form>
           <h2>Add a Comment</h2>
           <span id="message"></span>
@@ -91,8 +96,16 @@ const comments = (btn) => {
         </form>
     `;
 
+    const itemC = document.getElementById('itemC');
+    itemC.innerHTML = allComments
+      .map((e) => {
+        const { username, comment } = e;
+        return `<span>${e.creation_date} ${username}: ${comment}</span><br />`;
+      })
+      .join('<br />');
+
     const createCommentBtn = document.getElementById(`commentBtn${btn.id}`);
-    createCommentBtn.addEventListener('click', (e) => createComment(e, btn.id));
+    createCommentBtn.addEventListener('click', (e) => createComment(e, btn));
   };
 
   span.onclick = () => {
