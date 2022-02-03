@@ -215,9 +215,13 @@ form {
   width: 100%;
 }
 
-form span {
+#message {
   color: #f00;
   font-style: italic;
+}
+
+#messageSuccess {
+  color: #6e8100;
 }
 
 form input,

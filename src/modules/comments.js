@@ -77,6 +77,7 @@ const comments = (btn) => {
     <form>
           <h2>Add a Comment</h2>
           <span id="message"></span>
+          <span id="messageSuccess"></span>
           <br />
           <div class="pad-btm">
             <input type="text" name="name" id="name" placeholder="Your Name" />

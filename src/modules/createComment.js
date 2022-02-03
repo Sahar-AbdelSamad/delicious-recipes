@@ -7,8 +7,19 @@ const createComment = async (e, btn) => {
   const name = document.getElementById('name');
   const insight = document.getElementById('insight');
   const message = document.getElementById('message');
+  const messageSuccess = document.getElementById('messageSuccess');
   const itemC = document.getElementById('itemC');
   const countC = document.getElementById('countC');
+
+  name.addEventListener('focus', () => {
+    message.textContent = '';
+    messageSuccess.textContent = '';
+  });
+
+  insight.addEventListener('focus', () => {
+    message.textContent = '';
+    messageSuccess.textContent = '';
+  });
 
   if (name.value === '') {
     message.textContent = 'Please enter your name';
@@ -27,21 +38,13 @@ const createComment = async (e, btn) => {
 
   const postComment = await postCommentAPI(body);
   if (postComment === 'Created') {
-    message.textContent = 'Your comment was successfully Added';
+    messageSuccess.textContent = 'Your comment was successfully Added';
   } else {
-    message.textContent = 'Something went wrong';
+    messageSuccess.textContent = 'Something went wrong';
   }
 
   name.value = '';
   insight.value = '';
-
-  name.addEventListener('focus', () => {
-    message.textContent = '';
-  });
-
-  insight.addEventListener('focus', () => {
-    message.textContent = '';
-  });
 
   const allComments = await getCommentsAPI(btn.id);
 
