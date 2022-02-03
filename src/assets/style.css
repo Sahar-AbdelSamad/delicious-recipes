@@ -313,4 +313,13 @@ form input[type='button']:hover {
     display: block;
     margin: 3% 0;
   }
+
+  #name,
+  #insight {
+    width: 90%;
+  }
+
+  .pad-btm input {
+    width: 60%;
+  }
 }
