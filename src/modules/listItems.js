@@ -28,7 +28,7 @@ export const listLikes = () => {
 };
 
 const addLike = () => {
-  const heart = Array.from(document.querySelectorAll('.fas'));
+  const heart = Array.from(document.querySelectorAll('.heart'));
   heart.forEach((item) => {
     item.addEventListener('click', async () => {
       await postAPI(item.id);
@@ -58,7 +58,7 @@ export const listItems = async () => {
     div.id = element.idMeal;
 
     const heart = document.createElement('i');
-    heart.classList.add('fas', 'fa-heart');
+    heart.classList.add('fas', 'fa-heart', 'heart');
     heart.id = element.idMeal;
 
     const btn = document.createElement('button');
@@ -78,7 +78,9 @@ export const listItems = async () => {
 
   const recipe = document.querySelectorAll('.recipe-item');
   const counter = document.querySelector('.recipes-counter');
+  const counterMobile = document.querySelector('.recipes-counter-mobile');
   counter.innerText = (`Recipes (${countRecipes(recipe)})`);
+  counterMobile.innerText = (`Recipes (${countRecipes(recipe)})`);
 
   addLike();
 };
