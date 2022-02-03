@@ -27,13 +27,21 @@ const createComment = async (e, btn) => {
 
   const postComment = await postCommentAPI(body);
   if (postComment === 'Created') {
-    message.textContent = 'Your comment was successfull Added';
+    message.textContent = 'Your comment was successfully Added';
   } else {
     message.textContent = 'Something went wrong';
   }
 
   name.value = '';
   insight.value = '';
+
+  name.addEventListener('focus', () => {
+    message.textContent = '';
+  });
+
+  insight.addEventListener('focus', () => {
+    message.textContent = '';
+  });
 
   const allComments = await getCommentsAPI(btn.id);
 

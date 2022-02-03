@@ -5,7 +5,9 @@ body {
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 86%;
+  margin: auto;
 }
 
 .logo {
@@ -18,7 +20,13 @@ header {
   background-size: 100% 100%;
 }
 
-nav ul {
+.nav-mobile,
+.lines,
+#about {
+  display: none;
+}
+
+.nav-desktop {
   display: flex;
   justify-items: center;
   gap: 50px;
@@ -38,12 +46,12 @@ nav li a:hover {
 
 .recipes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 2%;
   row-gap: 40px;
   list-style-type: none;
   padding: 0;
-  margin: 40px 7% 90px;
+  margin: 20px 7%;
 }
 
 .recipe-item {
@@ -51,6 +59,7 @@ nav li a:hover {
   padding: 10px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  position: relative;
 }
 
 .food-img {
@@ -61,6 +70,7 @@ nav li a:hover {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+  margin-bottom: 40px;
 }
 
 .likes {
@@ -74,7 +84,7 @@ nav li a:hover {
 i {
   font-size: large;
   cursor: pointer;
-  color: red;
+  color: #aab85d;
 }
 
 i:active {
@@ -86,6 +96,13 @@ i:active {
 }
 
 .comments {
+  position: absolute;
+  bottom: 10px;
+  display: block;
+}
+
+.comments,
+.pad-btm input[type="button"] {
   cursor: pointer;
   border-radius: 0.2em;
   box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.5);
@@ -94,14 +111,7 @@ i:active {
   padding: 0.5rem 1.5rem;
   text-align: center;
   border: none;
-}
-
-.footer {
-  position: fixed;
-  background-color: #f4f4f4;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  background-color: #aab85d;
 }
 
 hr {
@@ -113,6 +123,26 @@ hr {
   height: 60px;
   display: flex;
   align-items: center;
+}
+
+#about {
+  font-size: larger;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #303801;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#about p {
+  width: 80%;
+  margin: 60px auto;
+  padding: 6%;
+  border: 3px dashed #aab85d;
+}
+
+#about a {
+  text-decoration: none;
+  color: #151800;
 }
 
 .modal {
@@ -127,21 +157,21 @@ hr {
   overflow-y: initial !important;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  filter: drop-shadow(0 0 0.75rem crimson);
+  filter: drop-shadow(0 0 0.75rem #c9e046);
 }
 
 .modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #adbd56;
   width: 50%;
   height: 90vh;
   overflow-y: auto;
 }
 
 .close {
-  color: #aaa;
+  color: #adbd56;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -162,12 +192,17 @@ hr {
 }
 
 #modalContent img {
-  width: 80%;
+  width: 50%;
+  border-radius: 50%;
+}
+
+#modalContent h1,
+#modalContent table {
+  width: 100%;
 }
 
 #modalContent table {
   display: flex;
-  width: 100%;
   justify-content: center;
 }
 
@@ -188,16 +223,17 @@ form span {
 form input,
 textarea {
   width: 50%;
-  border: 2px solid #000;
+  border: 2px solid #aab85d;
   padding: 10px;
+}
+
+form input:focus-visible,
+textarea:focus-visible {
+  outline: none;
 }
 
 form input[type='button'] {
   width: 30%;
-  border: 2px solid #000;
-  background: #fff;
-  box-shadow: 2px 2px #000;
-  cursor: pointer;
 }
 
 form input[type='button']:hover {
@@ -207,4 +243,70 @@ form input[type='button']:hover {
 
 .pad-btm {
   padding-bottom: 15px;
+}
+
+@media screen and (max-width: 856px) {
+  .recipes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .recipes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    margin-top: 0;
+  }
+
+  .recipes {
+    grid-template-columns: 1fr;
+    margin: 30px 5%;
+  }
+
+  #modalContent table {
+    width: 100%;
+  }
+
+  .lines {
+    display: block;
+    padding: 2% 0 0 2%;
+    background-color: #f4f4f4;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .navigation,
+  .nav-desktop,
+  .logo {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: block;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0 0 0 0;
+    background-color: #f4f4f4;
+    list-style-type: none;
+    z-index: 9999;
+  }
+
+  .mobile {
+    display: block;
+    margin: 3% 0;
+  }
 }
