@@ -1,3 +1,4 @@
+import countComments from './countComments.js';
 import { postCommentAPI, getCommentsAPI } from './involvementAPI.js';
 
 const createComment = async (e, btn) => {
@@ -7,6 +8,7 @@ const createComment = async (e, btn) => {
   const insight = document.getElementById('insight');
   const message = document.getElementById('message');
   const itemC = document.getElementById('itemC');
+  const countC = document.getElementById('countC');
 
   if (name.value === '') {
     message.textContent = 'Please enter your name';
@@ -34,6 +36,9 @@ const createComment = async (e, btn) => {
   insight.value = '';
 
   const allComments = await getCommentsAPI(btn.id);
+
+  countC.textContent = `(${countComments(allComments)})`;
+
   itemC.innerHTML = allComments
     .map((e) => {
       const { username, comment } = e;
