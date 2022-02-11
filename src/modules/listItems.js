@@ -31,8 +31,8 @@ const addLike = () => {
   const heart = Array.from(document.querySelectorAll('.heart'));
   heart.forEach((item) => {
     item.addEventListener('click', async () => {
+      item.nextSibling.firstChild.data = `${+item.nextSibling.firstChild.data.split(' ')[0]+1} likes`;
       await postAPI(item.id);
-      listLikes();
     });
   });
 };

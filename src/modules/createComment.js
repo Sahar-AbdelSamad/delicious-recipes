@@ -22,6 +22,7 @@ const createComment = async (e, btn) => {
   });
 
   if (name.value === '') {
+    messageSuccess.textContent = '';
     message.textContent = 'Please enter your name';
     return;
   }
