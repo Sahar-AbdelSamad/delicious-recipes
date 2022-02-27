@@ -1,10 +1,9 @@
 # Group-Capstone-JS
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-
-> This is a JavaScript capstone project. It is a web application based on external APIs. It retrieves information from two different APIs: [Meals DB](https://www.themealdb.com/api.php) and [Involvement API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270).
+> Delicious Recipes is a Webpack project, it retrieves information from two different APIs: [Meals DB](https://www.themealdb.com/api.php) and [Involvement API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270).
 > The homepage lists some recipes that we can "like".
-> The comment button opens a popup window showing more information about the recipe and we can use it to write a comment.
+> The comment button opens a popup window, shows us more information about the recipe, and allows us to leave a comment.
 
 ![screenshot](./Screenshot.gif)
 
@@ -55,7 +54,7 @@ $ npm test
 
 - GitHub: [@sahar-abdelsamad](https://github.com/Sahar-AbdelSamad)
 - Twitter: [@abdelsamadsahar](https://twitter.com/AbdelSamadSahar)
-- LinkedIn: [abdel-samad-sahar](https://www.linkedin.com/in/abdel-samad-sahar-353977223/)
+- LinkedIn: [sahar-abdel-samad](https://www.linkedin.com/in/sahar-abdel-samad/)
 
 👤 **Daniel Ufeli**
 
