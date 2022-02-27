@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-You can see [the app live here](https://sahar-abdelsamad.github.io/Group-Capstone-JS/)
+You can see [the app live here](https://sahar-abdelsamad.github.io/delicipous-recipes/)
 
 ## Setup
 
@@ -25,7 +25,7 @@ $ cd Group-Capstone-JS
 
 ```bash
 $ npm install
-$ npm run start # this will make webpack watching for your changes in code
+$ npm run start
 ```
 
 ### Open page in browser
@@ -67,7 +67,7 @@ $ npm test
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Sahar-AbdelSamad/Group-Capstone-JS/issues).
+Feel free to check the [issues page](https://github.com/Sahar-AbdelSamad/delicipous-recipes/issues).
 
 ## Show your support
 
