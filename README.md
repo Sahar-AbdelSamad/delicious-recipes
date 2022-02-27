@@ -9,14 +9,14 @@
 
 ## Live Demo
 
-You can see [the app live here](https://sahar-abdelsamad.github.io/delicipous-recipes/)
+You can see [the app live here](https://sahar-abdelsamad.github.io/delicious-recipes/)
 
 ## Setup
 
 ### Clone this repository
 
 ```bash
-$ git clone git@github.com:Sahar-AbdelSamad/Group-Capstone-JS.git
+$ git clone git@github.com:Sahar-AbdelSamad/delicious-recipes.git
 $ cd Group-Capstone-JS
 ```
 
@@ -66,7 +66,7 @@ $ npm test
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Sahar-AbdelSamad/delicipous-recipes/issues).
+Feel free to check the [issues page](https://github.com/Sahar-AbdelSamad/delicious-recipes/issues).
 
 ## Show your support
 
