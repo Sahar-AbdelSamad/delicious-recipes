@@ -1,4 +1,4 @@
-# Group-Capstone-JS
+# Delicious Recipes
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 > Delicious Recipes is a Webpack project, it retrieves information from two different APIs: [Meals DB](https://www.themealdb.com/api.php) and [Involvement API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270).
