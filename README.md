@@ -17,7 +17,7 @@ You can see [the app live here](https://sahar-abdelsamad.github.io/delicious-rec
 
 ```bash
 $ git clone git@github.com:Sahar-AbdelSamad/delicious-recipes.git
-$ cd Group-Capstone-JS
+$ cd delicious-recipes
 ```
 
 ### Run project
