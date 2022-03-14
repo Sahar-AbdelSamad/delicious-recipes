@@ -27,12 +27,6 @@ $ npm install
 $ npm run start
 ```
 
-### Open page in browser
-
-```bash
-$ open dist/index.html
-```
-
 ### Run tests
 
 To run the test just use the following command!
